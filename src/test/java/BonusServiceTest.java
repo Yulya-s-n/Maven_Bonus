@@ -2,20 +2,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BonusServiceTest {
 
-    @org.junit.jupiter.api.Test
+    @org.junit.jupiter.api.Test //@Test говорит о том,что у нас автотест
     void shouldCalculateForRegisteredAndUnderLimit() {
-        BonusService service = new BonusService();
+        BonusService service = new BonusService(); //создали тестируемый объект
 
         // подготавливаем данные:
         long amount = 1000;
         boolean registered = true;
-        long expected = 30;
+        long expected = 30; //ожидаемый  результат
 
         // вызываем целевой метод:
-        long actual = service.calculate(amount, registered);
+        long actual = service.calculate(amount, registered); //actual это фактический результат
 
         // производим проверку (сравниваем ожидаемый и фактический):
         assertEquals(expected, actual);
+
     }
 
     @org.junit.jupiter.api.Test
